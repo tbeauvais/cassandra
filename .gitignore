@@ -6,3 +6,5 @@ doc/
 Gemfile.lock
 cassandra-*.gem
 tmp
+.idea/
+.DS_Store

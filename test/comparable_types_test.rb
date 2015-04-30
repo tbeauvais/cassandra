@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/test_helper')
 
 class ComparableTypesTest < Test::Unit::TestCase
-  include Cassandra::Constants
+  include Cassandra1::Constants
 
   def test_long_sort
     ary = []
@@ -18,7 +18,7 @@ class ComparableTypesTest < Test::Unit::TestCase
   end
 
   def test_long_error
-    assert_raises(Cassandra::Comparable::TypeError) do
+    assert_raises(Cassandra1::Comparable::TypeError) do
       Long.new("bogus")
     end
   end
@@ -28,8 +28,8 @@ class ComparableTypesTest < Test::Unit::TestCase
   end
 
   def test_casting_unknown_class
-    assert_raises(Cassandra::Comparable::TypeError) do
-      Cassandra::Long.new({})
+    assert_raises(Cassandra1::Comparable::TypeError) do
+      Cassandra1::Long.new({})
     end
   end
 

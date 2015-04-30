@@ -71,7 +71,7 @@ rescue Errno::ECONNREFUSED => e
   false
 end
 
-namespace :cassandra do
+namespace :cassandra1 do
   desc "Start Cassandra"
   task :start, [:daemonize] => :java do |t, args|
     args.with_defaults(:daemonize => true)
@@ -108,7 +108,7 @@ namespace :cassandra do
 end
 
 desc "Start Cassandra"
-task :cassandra => :java do
+task :cassandra1 => :java do
   begin
     Rake::Task["cassandra:start"].invoke(false)
   rescue RuntimeError => e
